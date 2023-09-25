@@ -28,6 +28,23 @@ public class PlayerMovement : MonoBehaviour
     private void Move(Vector2 direction)
     {
         MovementDirection = direction;
+        if(direction.x < 0) 
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 90);
+        }
+        else if(direction.x > 0) 
+        {
+            transform.rotation = Quaternion.Euler(0, 0, -90);
+        }
+        if (direction.y < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 180);
+        }
+        else if (direction.y > 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+
     }
 
     private void ApplyMovement(Vector2 direction)

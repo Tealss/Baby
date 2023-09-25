@@ -8,9 +8,10 @@ public class TopDownCharacter : MonoBehaviour
 
     public int CurrentHP = 100;
     public int MaxHP = 100;
-    public float Speed = 5;
+    public float Speed = 10f;
     public float attackPower = 5;
     public bool m_die = false;//À¯´Ö »ç¸Á ¿©ºÎ
+
     // Start is called before the first frame update
     public static TopDownCharacter Instance
     {

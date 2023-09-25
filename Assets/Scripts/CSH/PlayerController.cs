@@ -16,16 +16,10 @@ public class PlayerController : CharacterController
     {
         CallMoveEvent(value.Get<Vector2>());
     }
-    public void OnLook(InputValue value)
-    {
-        Vector2 worldPos = _camera.ScreenToWorldPoint(value.Get<Vector2>());
-        Vector2 lookDirection = (worldPos - (Vector2)transform.position).normalized;
-        if (lookDirection.magnitude > 0.9f)
-            CallLookEvent(lookDirection);
-    }
+
     public void OnShoot(InputValue value)
     {
-        
+        IsShooting = value.isPressed;
 
     }
 }
