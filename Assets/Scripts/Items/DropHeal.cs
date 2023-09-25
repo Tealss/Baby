@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class DropHeal : DropItems
 {
-    [SerializeField] int healValue = 10;
-    //private HealthSystem _healthSystem;
+    [SerializeField] Items _item;
 
     protected override void OnPickedUp(GameObject receiver)
     {
-        //_healthSystem = receiver.GetComponent<HealthSystem>();
-        //_healthSystem.ChangeHealth(healValue);
+        TopDownCharacter.Instance.CurrentHP += _item.healthFigures;
+
+        TopDownCharacter.Instance.CurrentHP = (TopDownCharacter.Instance.CurrentHP > TopDownCharacter.Instance.MaxHP) ? TopDownCharacter.Instance.MaxHP : TopDownCharacter.Instance.CurrentHP;
     }
 }
