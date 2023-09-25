@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DropStatModifiers : MonoBehaviour
+public class DropStatModifiers : DropItems
 {
-    // Start is called before the first frame update
-    void Start()
+    //[SerializeField] private List<CharacterStats> statsModifier;
+    protected override void OnPickedUp(GameObject receiver)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //CharacterStatsHandler statsHandler = receiver.GetComponent<CharacterStatsHandler>();
+        //foreach (CharacterStats stat in statsModifier)
+        //{
+        //    statsHandler.AddStatModifier(stat);
+        //}
     }
 }

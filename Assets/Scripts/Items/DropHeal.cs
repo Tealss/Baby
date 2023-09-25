@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DropHeal : MonoBehaviour
+public class DropHeal : DropItems
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] int healValue = 10;
+    //private HealthSystem _healthSystem;
 
-    // Update is called once per frame
-    void Update()
+    protected override void OnPickedUp(GameObject receiver)
     {
-        
+        //_healthSystem = receiver.GetComponent<HealthSystem>();
+        //_healthSystem.ChangeHealth(healValue);
     }
 }
