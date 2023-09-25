@@ -9,6 +9,8 @@ public class TopDownCharacter : MonoBehaviour
     public int CurrentHP = 100;
     public int MaxHP = 100;
     public float Speed = 5;
+    public float attackPower = 5;
+    public bool m_die = false;//À¯´Ö »ç¸Á ¿©ºÎ
     // Start is called before the first frame update
     public static TopDownCharacter Instance
     {
@@ -34,14 +36,30 @@ public class TopDownCharacter : MonoBehaviour
             Destroy(this.gameObject );
         }
     }
-    void Start()
+
+    public void TakeDamage(int damage)
     {
-        
+        if (m_die)
+        {
+            return;
+        }
+
+        CurrentHP = Mathf.Clamp(CurrentHP - damage, 0, MaxHP);
+
+        if(CurrentHP == 0)
+        {
+            m_die = true;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeHeal(int heal)
     {
-        
+        CurrentHP = Mathf.Clamp(CurrentHP + heal, 0, MaxHP);
     }
+
+    public void UpAttackPower(float power) 
+    {
+        attackPower += power;
+    }
+
 }
