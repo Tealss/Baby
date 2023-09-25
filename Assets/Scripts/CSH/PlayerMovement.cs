@@ -1,0 +1,41 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.TextCore.Text;
+
+public class PlayerMovement : MonoBehaviour
+{
+    protected CharacterController Controller;
+    protected Rigidbody2D Rigidbody2D;
+    protected SpriteRenderer SpriteRenderer;
+    protected Animator Animator;
+    protected Vector2 MovementDirection = Vector2.zero;
+
+
+    protected virtual void Start()
+    {
+        Controller = GetComponent<CharacterController>();
+        Rigidbody2D = GetComponent<Rigidbody2D>();
+        SpriteRenderer = GetComponent<SpriteRenderer>();
+        Animator = GetComponentInChildren<Animator>();
+        Controller.OnMoveEvent += Move;
+    }
+    protected virtual void FixedUpdate()
+    {
+        ApplyMovement(MovementDirection);
+    }
+
+    private void Move(Vector2 direction)
+    {
+        MovementDirection = direction;
+    }
+
+    private void ApplyMovement(Vector2 direction)
+    {
+        //direction = direction * 5;
+
+        //Rigidbody2D.velocity = direction;
+        Rigidbody2D.velocity = TopDownCharacter.Instance.Speed * direction;
+    }
+
+}
