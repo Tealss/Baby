@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 1f;
+    protected float speed = 10f;
     public Rigidbody2D Rigidbody;
     public void DestoryBulletInvoke()
     {

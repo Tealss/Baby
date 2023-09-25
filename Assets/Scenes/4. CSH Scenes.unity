@@ -345,7 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentHP: 100
   MaxHP: 100
-  Speed: 5
+  Speed: 2
   attackPower: 5
   m_die: 0
 --- !u!114 &36049735
