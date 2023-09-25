@@ -20,6 +20,7 @@ public class Select : MonoBehaviour
 
     private void SpawnCharacter(int characterIndex)
     {
+        // 인트 랜덤 스폰지역
         int randomIndex = Random.Range(0, spawnPoints.Length);
         // 새로운 캐릭터 생성을 위해 캐릭 삭제
         if (currentCharacter != null)
