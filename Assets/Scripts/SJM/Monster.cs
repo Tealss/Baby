@@ -28,7 +28,7 @@ public class Monster : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
-        _target = Player1;  //플레이어 추격
+        //_target = Gameobject;  //플레이어 추격
         _MaxHp = hp;
         _Hp = hp;
         _Speed = speed;
