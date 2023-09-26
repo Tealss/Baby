@@ -17,6 +17,14 @@ public class Bullet : MonoBehaviour
     public void Move(Vector2 Direction)
     {
         //transform.up = Direction;
+        //if (Direction.x > 0)
+        //    Rigidbody.AddForce(Vector2.right,ForceMode2D.Impulse);
+        //else if (Direction.x < 0)
+        //    Rigidbody.AddForce(Vector2.left, ForceMode2D.Impulse);
+        //else if (Direction.y > 0)
+        //    Rigidbody.AddForce(Vector2.up, ForceMode2D.Impulse);
+        //else if (Direction.y < 0)
+        //    Rigidbody.AddForce(Vector2.down, ForceMode2D.Impulse);
         Rigidbody.velocity = Direction * speed;
     }
 
