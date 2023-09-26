@@ -722,6 +722,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  spawnPositionsRoot: {fileID: 0}
+  rewards:
+  - {fileID: 8116866104887311320, guid: 2bed8435a08b95442a483da861c2797d, type: 3}
+  - {fileID: 5588331295373188105, guid: 6ac51e7e53cbf6146bb71524ccec87db, type: 3}
+  - {fileID: 8907837151850140605, guid: a6c864ae6abbb1443a4123637a050cad, type: 3}
+  - {fileID: 8116866104887311320, guid: 2bed8435a08b95442a483da861c2797d, type: 3}
+  - {fileID: 8116866104887311320, guid: 2bed8435a08b95442a483da861c2797d, type: 3}
 --- !u!4 &1508513372
 Transform:
   m_ObjectHideFlags: 0
