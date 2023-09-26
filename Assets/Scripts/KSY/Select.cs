@@ -29,7 +29,7 @@ public class Select : MonoBehaviour
             Destroy(currentCharacter);
         }
 
-        // 현재 캐릭값의 위치를 잡아서, 그 값(previousPosition)으로 생성함
+        // 현재 캐릭값의 위치를 잡아서, 그 값(previousPosition)으로 생성함 // 변경 스폰포인트
         currentCharacter = Instantiate(characterPrefabs[characterIndex], spawnPoints[randomIndex].position, Quaternion.identity);
     }
 
