@@ -80,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
         //direction = direction * 5;
 
         //Rigidbody2D.velocity = direction;
-        Rigidbody2D.velocity = TopDownCharacter.Instance.Speed * direction;
+        Rigidbody2D.velocity = TopDownCharacter.Instance.GetSpeed() * direction;
     }
 
 }

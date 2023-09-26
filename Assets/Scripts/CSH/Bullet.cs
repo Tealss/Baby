@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D Rigidbody;
     public void DestoryBulletInvoke()
     {
-        Invoke(nameof(DestroyBullet), 5f);
+        Invoke(nameof(DestroyBullet), 2f);
     }
     private void DestroyBullet()
     {
@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
     }
     public void Move(Vector2 Direction)
     {
-        transform.up = Direction;
+        //transform.up = Direction;
         Rigidbody.velocity = Direction * speed;
     }
 

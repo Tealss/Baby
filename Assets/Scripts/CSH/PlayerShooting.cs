@@ -6,6 +6,7 @@ public class PlayerShooting : MonoBehaviour
 {
     private CharacterController _controller;
 
+
     private void Awake()
     {
         _controller = GetComponent<CharacterController>(); 
@@ -14,11 +15,12 @@ public class PlayerShooting : MonoBehaviour
     {
         _controller.OnShootEvent += Shoot;
     }
-    public void Shoot()
+
+    public void Shoot(Vector2 direction)
     {
         Bullet bullet = ObjectPool.Instance.GetObject();
         bullet.transform.position = transform.position;
-        bullet.Move(transform.up);
+        bullet.Move(direction);
         bullet.DestoryBulletInvoke();
     }
 }

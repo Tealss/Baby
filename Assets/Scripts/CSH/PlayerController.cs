@@ -19,7 +19,21 @@ public class PlayerController : CharacterController
 
     public void OnShoot(InputValue value)
     {
-        IsShooting = value.isPressed;
+        //if (_timeSinceLastAttack < 0.5f)//ÃÑ¾Ë ¼Óµµ
+        //{
+        //    _timeSinceLastAttack += Time.deltaTime;
+        //}
+        //else if (IsShooting && _timeSinceLastAttack >= 0.5f)
+        //{
+        //    CallShootEvent(value.Get<Vector2>());
+        //    _timeSinceLastAttack = 0;
+        //}
+        if (_timeSinceLastAttack >= 0.5f)
+        {
+            CallShootEvent(value.Get<Vector2>());
+            _timeSinceLastAttack = 0;
+        }
 
     }
+
 }
