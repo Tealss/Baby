@@ -9,6 +9,7 @@ public class Gamemanager : MonoBehaviour
     public static Gamemanager instance;
     public player player;
     
+    public List<Gameobject> rewards = new List<Gameobject>();
 
     void Awake()
     {
@@ -18,10 +19,14 @@ public class Gamemanager : MonoBehaviour
 
     void Start()
     {
-
+        rewards.Clear();
     }
 
     void Update()
+    {
+
+    }
+    void CreateReward()
     {
 
     }
