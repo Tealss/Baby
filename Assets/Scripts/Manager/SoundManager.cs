@@ -13,6 +13,7 @@ public class SoundManager : MonoBehaviour
 
     private AudioSource musicAudioSource;
     public AudioClip musicClip;
+
     private void Awake()
     {
         instance = this;
@@ -22,6 +23,7 @@ public class SoundManager : MonoBehaviour
 
         objectPool = GetComponent<ObjectPool>();
     }
+
     private void Start()
     {
         ChangeBackGroundMusic(musicClip);
