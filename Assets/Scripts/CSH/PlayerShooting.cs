@@ -23,7 +23,7 @@ public class PlayerShooting : MonoBehaviour
             Bullet bullet = ObjectPool.Instance.GetObject();
             bullet.transform.position = transform.position;
             bullet.Move(direction);
-            bullet.DestoryBulletInvoke();
+            bullet.Invoke("DestoryBulletInvoke",0.45f);
         }
     }
 }

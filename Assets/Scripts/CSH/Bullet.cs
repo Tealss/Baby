@@ -5,27 +5,39 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     protected float speed = 10f;
-    public Rigidbody2D Rigidbody;
+    float fallingDistance = -1f;
+    Rigidbody2D Rigidbody;
+    Animator animator;
+    private void Awake()
+    {
+        Rigidbody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+    }
     public void DestoryBulletInvoke()
     {
-        Invoke(nameof(DestroyBullet), 2f);
+        Rigidbody.gravityScale = 2.5f;
+        animator.Play("Destroy");
+        Invoke(nameof(DestroyBullet), 0.2f);
     }
     private void DestroyBullet()
     {
+        Rigidbody.gravityScale = 0f;
+        Rigidbody.velocity = Vector2.zero;
         ObjectPool.Instance.ReturnObj(this);
     }
     public void Move(Vector2 Direction)
     {
         //transform.up = Direction;
         //if (Direction.x > 0)
-        //    Rigidbody.AddForce(Vector2.right,ForceMode2D.Impulse);
+        //    Rigidbody.AddForce(Vector2.right*10, ForceMode2D.Impulse);
         //else if (Direction.x < 0)
-        //    Rigidbody.AddForce(Vector2.left, ForceMode2D.Impulse);
+        //    Rigidbody.AddForce(Vector2.left*10, ForceMode2D.Impulse);
         //else if (Direction.y > 0)
-        //    Rigidbody.AddForce(Vector2.up, ForceMode2D.Impulse);
+        //    Rigidbody.AddForce(Vector2.up*10, ForceMode2D.Impulse);
         //else if (Direction.y < 0)
-        //    Rigidbody.AddForce(Vector2.down, ForceMode2D.Impulse);
+        //    Rigidbody.AddForce(Vector2.down*10, ForceMode2D.Impulse);
         Rigidbody.velocity = Direction * speed;
+        //transform.Translate(0, fallingDistance * Time.deltaTime, 0, Space.World);
     }
 
 
