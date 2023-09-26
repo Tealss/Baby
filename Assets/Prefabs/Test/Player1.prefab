@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6441926239477074918}
   - component: {fileID: 9198688069958999819}
   - component: {fileID: 217753789466806411}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Area
   m_TagString: Area
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3787986563467416112}
   - component: {fileID: 1093784880368834432}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 1584912419849393574}
   - component: {fileID: 3052842704748476624}
   - component: {fileID: 9095848752541797494}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,7 +411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8293600145224505064}
   - component: {fileID: 2884072766799369687}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
