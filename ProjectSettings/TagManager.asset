@@ -9,7 +9,6 @@ TagManager:
   - Puzzle
   - Door
   - Teleport
-  - Monster
   layers:
   - Default
   - TransparentFX

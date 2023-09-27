@@ -8,7 +8,7 @@ public class MonsterAi : MonoBehaviour
     void Update()
     {
         float dis = Vector3.Distance(transform.position, target.position); //내위치와 target의 위치 사이의 거리를 구함
-        if (dis <= 100) // 거리가 100칸 안으로 좁혀졌으면 쫒기 시작
+        if (dis <= 100) // 거리가 10칸 안으로 좁혀졌으면 쫒기 시작
         {
             Move();
         }
@@ -22,7 +22,7 @@ public class MonsterAi : MonoBehaviour
 
         Vector2 direction = (targetPosition - currentPosition).normalized; // 목표까지의 방향을 정규화합니다.
 
-        transform.Translate(direction * Monster.speed * Time.deltaTime);
+        //transform.Translate(direction * Monster.speed * Time.deltaTime);
 
     }
 }
