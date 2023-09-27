@@ -669,6 +669,18 @@ Sprite:
   m_PhysicsShape: []
   m_Bones: []
   m_SpriteID: 
+--- !u!4 &993014693 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4816323701817398372, guid: c129d3eaed3108b4398f2910b5dbaead,
+    type: 3}
+  m_PrefabInstance: {fileID: 4780665856044072285}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1456252051 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5953358088339002822, guid: c129d3eaed3108b4398f2910b5dbaead,
+    type: 3}
+  m_PrefabInstance: {fileID: 4780665856044072285}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1526852256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1346,6 +1358,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1838596214479850577, guid: c129d3eaed3108b4398f2910b5dbaead,
+        type: 3}
+      propertyPath: Body
+      value: 
+      objectReference: {fileID: 1456252051}
     - target: {fileID: 2465424160117851564, guid: c129d3eaed3108b4398f2910b5dbaead,
         type: 3}
       propertyPath: m_Name
@@ -1371,6 +1388,11 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -105541197
       objectReference: {fileID: 0}
+    - target: {fileID: 7763651044198499765, guid: c129d3eaed3108b4398f2910b5dbaead,
+        type: 3}
+      propertyPath: Head
+      value: 
+      objectReference: {fileID: 993014693}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
