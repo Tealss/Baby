@@ -19,7 +19,6 @@ public class ObjectPool : MonoBehaviour
     public GameObject BaseBullet;
     private Queue<Bullet> _poolingObjQueue = new Queue<Bullet>();
 
-
     private void Awake()
     {
         if (null == _instance)
@@ -74,9 +73,8 @@ public class ObjectPool : MonoBehaviour
         bullet.transform.position = Vector2.zero;
         bullet.transform.SetParent(Instance.transform);
 
-        Instance._poolingObjQueue.Enqueue(bullet);
-
+        Instance._poolingObjQueue.Enqueue(bullet);  
+        
     }
-
 
 }
