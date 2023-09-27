@@ -6,11 +6,31 @@ public class TopDownCharacter : MonoBehaviour
 {
     private static TopDownCharacter _instance = null;
 
+<<<<<<< Updated upstream
     public int CurrentHP = 100;
     public int MaxHP = 100;
     public float Speed = 5f;
     public float attackPower = 5;
     public bool m_die = false;//À¯´Ö »ç¸Á ¿©ºÎ
+=======
+    private int maxHp = 10;
+    //public int MaxHp//ÇÁ·ÎÆÛÆ¼ »ç¿ë ¿¹Á¤
+    //{
+    //    get { return maxHp; }
+    //    private set { maxHp = Mathf.Clamp(value, 0, 10); }
+    //}
+
+    private int currentHp = 3;
+    //public int CurrentHp
+    //{
+    //    get { return currentHp; }
+    //    private set { currentHp = Mathf.Clamp(value, 0, maxHp); }
+    //}
+
+    private float Speed = 5f;
+    private float attackPower = 5;
+    private bool m_die = false;//À¯´Ö »ç¸Á ¿©ºÎ
+>>>>>>> Stashed changes
 
     // Start is called before the first frame update
     public static TopDownCharacter Instance
@@ -45,9 +65,9 @@ public class TopDownCharacter : MonoBehaviour
             return;
         }
 
-        CurrentHP = Mathf.Clamp(CurrentHP - damage, 0, MaxHP);
+        currentHp = Mathf.Clamp(currentHp - damage, 0, maxHp);
 
-        if(CurrentHP == 0)
+        if(currentHp == 0)
         {
             m_die = true;
         }
@@ -55,7 +75,7 @@ public class TopDownCharacter : MonoBehaviour
 
     public void TakeHeal(int heal)
     {
-        CurrentHP = Mathf.Clamp(CurrentHP + heal, 0, MaxHP);
+        currentHp = Mathf.Clamp(currentHp + heal, 0, maxHp);
     }
 
     public void UpAttackPower(float power) 
@@ -66,5 +86,20 @@ public class TopDownCharacter : MonoBehaviour
     {
         Speed += speed;
     }
+<<<<<<< Updated upstream
+=======
+    public float GetSpeed()
+    {
+        return Speed;
+    }
+    public int GetMaxHp()
+    {
+        return maxHp;
+    }
+    public int GetCurrentHp()
+    {
+        return currentHp;
+    }
+>>>>>>> Stashed changes
 
 }
