@@ -17,7 +17,7 @@ public class PlayerController : CharacterController
         CallMoveEvent(value.Get<Vector2>());
     }
 
-    public void OnShoot(InputValue value)
+    public void OnShoot()
     {
         //if (_timeSinceLastAttack < 0.5f)//ÃÑ¾Ë ¼Óµµ
         //{
@@ -28,7 +28,7 @@ public class PlayerController : CharacterController
         //    CallShootEvent(value.Get<Vector2>());
         //    _timeSinceLastAttack = 0;
         //}
-        if (_timeSinceLastAttack >= 0.5f)
+        if (_timeSinceLastAttack >= 0.2f)
         {
             CallShootEvent();
             _timeSinceLastAttack = 0;
