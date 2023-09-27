@@ -36,7 +36,6 @@ public class Select : MonoBehaviour
     private void SpawnCharacter()
     {
             
-        //Enter.Count 는 소환 좌표의 총 갯수를 의미함 안녕하세요 만나서반가워요
         // 총 갯수가 0 이 아닐때, 즉 모든 스테이지를 클리어하지 않을때에는 true 그렇지 않으면 false
         if (Enter.Count != 0)
         {
