@@ -25,20 +25,24 @@ public class Bullet : MonoBehaviour
         Rigidbody.velocity = Vector2.zero;
         ObjectPool.Instance.ReturnObj(this);
     }
-    public void Move(Vector2 Direction)
+    public void MoveUp()
     {
-        //transform.up = Direction;
-        //if (Direction.x > 0)
-        //    Rigidbody.AddForce(Vector2.right*10, ForceMode2D.Impulse);
-        //else if (Direction.x < 0)
-        //    Rigidbody.AddForce(Vector2.left*10, ForceMode2D.Impulse);
-        //else if (Direction.y > 0)
-        //    Rigidbody.AddForce(Vector2.up*10, ForceMode2D.Impulse);
-        //else if (Direction.y < 0)
-        //    Rigidbody.AddForce(Vector2.down*10, ForceMode2D.Impulse);
-        Rigidbody.velocity = Direction * speed;
-        //transform.Translate(0, fallingDistance * Time.deltaTime, 0, Space.World);
+        Rigidbody.AddForce(Vector2.up * speed, ForceMode2D.Impulse);
     }
+    public void MoveDown()
+    {
+        Rigidbody.AddForce(Vector2.down * speed, ForceMode2D.Impulse);
+    }
+    public void MoveLeft()
+    {
+        Rigidbody.AddForce(Vector2.left * speed, ForceMode2D.Impulse);
+    }
+    public void MoveRight()
+    {
+        Rigidbody.AddForce(Vector2.right * speed, ForceMode2D.Impulse);
+    }
+
+
 
 
     public void OnTriggerEnter2D(Collider2D other)

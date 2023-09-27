@@ -30,7 +30,7 @@ public class PlayerController : CharacterController
         //}
         if (_timeSinceLastAttack >= 0.5f)
         {
-            CallShootEvent(value.Get<Vector2>());
+            CallShootEvent();
             _timeSinceLastAttack = 0;
         }
 
