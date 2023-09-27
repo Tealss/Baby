@@ -6,12 +6,11 @@ TagManager:
   tags:
   - Ground
   - Area
-  - Monster
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 
