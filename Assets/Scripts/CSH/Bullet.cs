@@ -5,24 +5,30 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     protected float speed = 10f;
-    float fallingDistance = -1f;
     Rigidbody2D Rigidbody;
     Animator animator;
+
+    WaitForSeconds WaitSeconds = new WaitForSeconds(1f);
     private void Awake()
     {
         Rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
-    public void DestoryBulletInvoke()
+    public void DestoryBulletInvoke()//낙하 대기
     {
-        Rigidbody.gravityScale = 2.5f;
-        animator.Play("Destroy");
+        Rigidbody.gravityScale = 1.9f;
         Invoke(nameof(DestroyBullet), 0.2f);
     }
-    private void DestroyBullet()
+    private void DestroyBullet()//낙하
     {
         Rigidbody.gravityScale = 0f;
         Rigidbody.velocity = Vector2.zero;
+        animator.Play("Destroy");
+        StartCoroutine(DelayDestroy());
+    }
+    IEnumerator DelayDestroy()//사라지는 애니메이션 대기
+    {
+        yield return WaitSeconds;
         ObjectPool.Instance.ReturnObj(this);
     }
     public void MoveUp()
@@ -50,7 +56,7 @@ public class Bullet : MonoBehaviour
 
         if (other.tag == "Player")
         {
-            DestroyBullet();
+            //DestroyBullet();
         }
         else if (other.tag == "Enemy" || other.tag == "Boss")
         {
