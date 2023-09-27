@@ -41,7 +41,7 @@ public class Select : MonoBehaviour
         // 총 갯수가 0 이 아닐때, 즉 모든 스테이지를 클리어하지 않을때에는 true 그렇지 않으면 false
         if (Enter.Count != 0)
         {
-            // Draw 를 0 ~ 남은 스테이지 수 랜덤 수 출력함
+            // Draw 를 0 ~ 남은 스테이지 수 랜덤 수 출력함 + 캐릭터 삭제 후 생성
             Draw = Random.Range(0, Enter.Count);
             currentCharacter = Instantiate(characterPrefabs[characterIndex], Enter[Draw], Quaternion.identity);
             Enter.RemoveAt(Draw);

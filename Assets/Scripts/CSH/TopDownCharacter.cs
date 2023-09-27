@@ -6,11 +6,11 @@ public class TopDownCharacter : MonoBehaviour
 {
     private static TopDownCharacter _instance = null;
 
-    private int CurrentHP = 100;
-    private int MaxHP = 100;
-    private float Speed = 5f;
-    private float attackPower = 5;
-    private bool m_die = false;//À¯´Ö »ç¸Á ¿©ºÎ
+    public int CurrentHP = 100;
+    public int MaxHP = 100;
+    public float Speed = 5f;
+    public float attackPower = 5;
+    public bool m_die = false;//À¯´Ö »ç¸Á ¿©ºÎ
 
     // Start is called before the first frame update
     public static TopDownCharacter Instance
@@ -65,10 +65,6 @@ public class TopDownCharacter : MonoBehaviour
     public void UpSpeed(float speed) 
     {
         Speed += speed;
-    }
-    public float GetSpeed()
-    {
-        return Speed;
     }
 
 }
