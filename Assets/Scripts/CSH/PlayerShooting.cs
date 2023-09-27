@@ -41,7 +41,7 @@ public class PlayerShooting : MonoBehaviour
             HeadAnimator.Play("HeadLeft");
             bullet.MoveLeft();
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             HeadAnimator.Play("HeadRight");
             bullet.MoveRight();

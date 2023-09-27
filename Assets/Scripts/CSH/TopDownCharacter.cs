@@ -6,8 +6,8 @@ public class TopDownCharacter : MonoBehaviour
 {
     private static TopDownCharacter _instance = null;
 
-    private int CurrentHP = 100;
-    private int MaxHP = 100;
+    private int CurrentHP = 3;
+    private int MaxHP = 10;
     private float Speed = 5f;
     private float attackPower = 5;
     private bool m_die = false;//À¯´Ö »ç¸Á ¿©ºÎ
@@ -69,6 +69,14 @@ public class TopDownCharacter : MonoBehaviour
     public float GetSpeed()
     {
         return Speed;
+    }
+    public int GetMaxHp()
+    {
+        return MaxHP;
+    }
+    public int GetCurrentHp()
+    {
+        return CurrentHP;
     }
 
 }
