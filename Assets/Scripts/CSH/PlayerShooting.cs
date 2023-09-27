@@ -6,6 +6,7 @@ public class PlayerShooting : MonoBehaviour
 {
     private CharacterController _controller;
 
+
     private void Awake()
     {
         _controller = GetComponent<CharacterController>(); 
@@ -14,11 +15,15 @@ public class PlayerShooting : MonoBehaviour
     {
         _controller.OnShootEvent += Shoot;
     }
-    public void Shoot()
+
+    public void Shoot(Vector2 direction)
     {
-        Bullet bullet = ObjectPool.Instance.GetObject();
-        bullet.transform.position = transform.position;
-        bullet.Move(transform.up);
-        bullet.DestoryBulletInvoke();
+        if (direction.x != 0 || direction.y != 0)//키보드 떼는 타이밍에 0이 입력됨 왜인지는 모르겠음
+        {
+            Bullet bullet = ObjectPool.Instance.GetObject();
+            bullet.transform.position = transform.position;
+            bullet.Move(direction);
+            bullet.Invoke("DestoryBulletInvoke",0.45f);
+        }
     }
 }
