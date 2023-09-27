@@ -6,9 +6,14 @@ public class PlayerShooting : MonoBehaviour
 {
     private CharacterController _controller;
 
+    [Header("Head")]
+    public Transform Head;
+    Animator HeadAnimator;
+
 
     private void Awake()
     {
+        HeadAnimator = Head.GetComponent<Animator>();
         _controller = GetComponent<CharacterController>(); 
     }
     private void Start()
@@ -16,14 +21,33 @@ public class PlayerShooting : MonoBehaviour
         _controller.OnShootEvent += Shoot;
     }
 
-    public void Shoot(Vector2 direction)
+    public void Shoot()
     {
-        if (direction.x != 0 || direction.y != 0)//키보드 떼는 타이밍에 0이 입력됨 왜인지는 모르겠음
+
+        Bullet bullet = ObjectPool.Instance.GetObject();
+        bullet.transform.position = transform.position;
+        if(Input.GetKeyDown(KeyCode.UpArrow)) 
         {
-            Bullet bullet = ObjectPool.Instance.GetObject();
-            bullet.transform.position = transform.position;
-            bullet.Move(direction);
-            bullet.Invoke("DestoryBulletInvoke",0.45f);
+            HeadAnimator.Play("HeadUp");
+            bullet.MoveUp();
         }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            HeadAnimator.Play("HeadDown");
+            bullet.MoveDown();
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            HeadAnimator.Play("HeadLeft");
+            bullet.MoveLeft();
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            HeadAnimator.Play("HeadRight");
+            bullet.MoveRight();
+        }
+
+        bullet.Invoke("DestoryBulletInvoke",0.45f);
+
     }
 }
