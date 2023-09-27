@@ -9,10 +9,10 @@ public class CharacterController : MonoBehaviour
 {
     public event Action<Vector2> OnMoveEvent;
     public event Action<Vector2> OnLookEvent;
-    public event Action<Vector2> OnShootEvent;
+    public event Action OnShootEvent;
 
     protected bool IsShooting;
-    protected float _timeSinceLastAttack = 0;
+    private float _timeSinceLastAttack = 0;
 
 
     protected virtual void Start()
@@ -25,6 +25,11 @@ public class CharacterController : MonoBehaviour
         {
             _timeSinceLastAttack += Time.deltaTime;
         }
+        else if (IsShooting && _timeSinceLastAttack >= 0.5f)
+        {
+            CallShootEvent();
+            _timeSinceLastAttack = 0;
+        }
     }
 
     public void CallMoveEvent(Vector2 direction)
@@ -32,8 +37,8 @@ public class CharacterController : MonoBehaviour
         OnMoveEvent?.Invoke(direction);
     }
 
-    public void CallShootEvent(Vector2 direction)
+    public void CallShootEvent()
     {
-        OnShootEvent?.Invoke(direction);
+        OnShootEvent?.Invoke();
     }
 }

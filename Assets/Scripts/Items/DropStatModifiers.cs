@@ -11,7 +11,7 @@ public class DropStatModifiers : DropItems
 
     protected override void OnPickedUp(GameObject receiver)
     {
-        TopDownCharacter.Instance.UpAttackPower(_item.attackFigures);
-        TopDownCharacter.Instance.UpSpeed(_item.speedFigures);
+        TopDownCharacter.Instance.attackPower += _item.attackFigures;
+        TopDownCharacter.Instance.Speed += _item.speedFigures;
     }
 }

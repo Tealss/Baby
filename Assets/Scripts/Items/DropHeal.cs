@@ -8,6 +8,8 @@ public class DropHeal : DropItems
 
     protected override void OnPickedUp(GameObject receiver)
     {
-        TopDownCharacter.Instance.TakeHeal(_item.healthFigures);
+        TopDownCharacter.Instance.CurrentHP += _item.healthFigures;
+
+        TopDownCharacter.Instance.CurrentHP = (TopDownCharacter.Instance.CurrentHP > TopDownCharacter.Instance.MaxHP) ? TopDownCharacter.Instance.MaxHP : TopDownCharacter.Instance.CurrentHP;
     }
 }
