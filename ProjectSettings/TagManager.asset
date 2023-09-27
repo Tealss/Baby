@@ -6,9 +6,6 @@ TagManager:
   tags:
   - Ground
   - Area
-  - Puzzle
-  - Door
-  - Teleport
   layers:
   - Default
   - TransparentFX
