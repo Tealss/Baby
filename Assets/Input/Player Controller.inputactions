@@ -25,13 +25,9 @@
                 },
                 {
                     "name": "Shoot",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "98f393e0-874c-4630-b872-d8c27e4e3b87",
-<<<<<<< HEAD
                     "expectedControlType": "",
-=======
-                    "expectedControlType": "Button",
->>>>>>> SJM_New2
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -114,7 +110,6 @@
                     "isPartOfComposite": false
                 },
                 {
-<<<<<<< HEAD
                     "name": "",
                     "id": "94a80711-2b87-4ba1-817b-c4a5fe49736b",
                     "path": "<Mouse>/leftButton",
@@ -126,8 +121,6 @@
                     "isPartOfComposite": false
                 },
                 {
-=======
->>>>>>> SJM_New2
                     "name": "",
                     "id": "730583fc-8eea-4436-a7a4-c36032a628bc",
                     "path": "<Keyboard>/tab",
@@ -135,50 +128,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Inventory",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "65b0d674-8e18-49ba-8efd-3450fe63829b",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Shoot",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8e5efde1-bb8d-4148-b246-accb6b7a37f7",
-                    "path": "<Keyboard>/downArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Shoot",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a259315f-4158-44df-bc31-c6fa3e1435a2",
-                    "path": "<Keyboard>/leftArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Shoot",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "6ea33171-2b69-4ec8-ae48-d0c79a7edafe",
-                    "path": "<Keyboard>/rightArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

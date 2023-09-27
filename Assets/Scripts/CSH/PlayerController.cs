@@ -17,26 +17,9 @@ public class PlayerController : CharacterController
         CallMoveEvent(value.Get<Vector2>());
     }
 
-    public void OnShoot()
+    public void OnShoot(InputValue value)
     {
-<<<<<<< HEAD
         IsShooting = value.isPressed;
-=======
-        //if (_timeSinceLastAttack < 0.5f)//ÃÑ¾Ë ¼Óµµ
-        //{
-        //    _timeSinceLastAttack += Time.deltaTime;
-        //}
-        //else if (IsShooting && _timeSinceLastAttack >= 0.5f)
-        //{
-        //    CallShootEvent(value.Get<Vector2>());
-        //    _timeSinceLastAttack = 0;
-        //}
-        if (_timeSinceLastAttack >= 0.2f)
-        {
-            CallShootEvent();
-            _timeSinceLastAttack = 0;
-        }
->>>>>>> SJM_New2
 
     }
 }
