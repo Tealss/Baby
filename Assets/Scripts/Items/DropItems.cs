@@ -7,19 +7,19 @@ public abstract class DropItems : MonoBehaviour
     [SerializeField] private bool destroyOnPickup = true;
     [SerializeField] private LayerMask canBePickupBy;
     [SerializeField] private AudioClip pickupSound;
-
+    const string player = "Player";
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (canBePickupBy.value == (canBePickupBy.value | (1 << other.gameObject.layer)))
+        if(other.CompareTag(player))
         {
             OnPickedUp(other.gameObject);
             if (pickupSound)
                 //SoundManager.PlayClip(pickupSound);
 
-            if (destroyOnPickup)
-            {
-                Destroy(gameObject);
-            }
+                if (destroyOnPickup)
+                {
+                    Destroy(gameObject);
+                }
         }
     }
 

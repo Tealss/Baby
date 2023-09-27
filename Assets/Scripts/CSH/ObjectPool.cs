@@ -30,7 +30,7 @@ public class ObjectPool : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        Init(20);
+        Init(3);
     }
 
     private Bullet CreateObj()
